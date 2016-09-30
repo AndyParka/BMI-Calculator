@@ -10,6 +10,13 @@ public class MyBMIServer {
 		double dblWeight = Double.valueOf(weight.trim());
 		double dblHeight = Double.valueOf(height.trim());
 		double BMI = dblWeight / (dblHeight * dblHeight);
+
+		//get classification
+
+
+
+
+
 		return BMI
 	}
 

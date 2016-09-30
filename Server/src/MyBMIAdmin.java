@@ -31,6 +31,24 @@ public class MyBMIAdmin {
 		// Returns false if a range named oldName does not exist or the user
 		// credentials are invalid,
 		// true if the range exists and its name has been updated.
+		boolean answer = false;
+
+		if (testUser(user,pwd)){
+
+			//get list of names
+
+			if(newName == object){return false;}
+
+			if (oldName == ){
+
+			}else{return false;}
+
+
+		} else {
+			return false;
+		}
+
+
 	}
 
 	// Retrieve the number of client web service calls performed on either
