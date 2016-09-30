@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class MyBMIAdmin {
 	// Add a new BMI range to the system
@@ -17,12 +18,19 @@ public class MyBMIAdmin {
 		// Note also that the desirable range is denoted by true for normal,
 		// false otherwise.
 
+		MyBMIRangeObject Range = new MyBMIRangeObject();
+
+		Range.setName(name);
+		Range.setBMImin(Double.valueOf(lower));
+		Range.setBMImax(Double.valueOf(upper));
+
 	}
 
 	boolean deleteRange(String user, String pwd, String name) {
 		// Returns false if a range with name does not exist or the user
 		// credentials are invalid, true
 		// if the range has been removed.
+
 	}
 
 	// Update the name for a specific range (for example if medical opinions

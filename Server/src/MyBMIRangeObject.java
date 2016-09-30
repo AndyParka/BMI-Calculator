@@ -1,13 +1,14 @@
 
 public class MyBMIRangeObject {
 
-	int id;
 	private String Name;
 	private Double BMImin;
 	private Double BMImax;
 
-	public void setID(int newID) {
-		id = newID;
+	public void setParams(String name, Double min, Double max) {
+		Name = name;
+		BMImin = min;
+		BMImax = max;
 	}
 
 	public void setName(String newName) {
@@ -22,28 +23,28 @@ public class MyBMIRangeObject {
 		BMImax = newBMImax;
 	};
 
-	public int getID()
-
-	{
-
-	}
-
 	public String getName()
 
 	{
-
+		return this.Name;
 	}
 
 	public Double getBMIMax()
 
 	{
-
+		return this.BMImax;
 	}
 
 	public Double getBMIMin()
 
 	{
+		return this.BMImin;
+	}
 
+	public String getRange() {
+
+		String result = this.getName() + " = " + this.getBMIMin() + " - " + this.getBMIMax();
+		return result;
 	}
 
 }

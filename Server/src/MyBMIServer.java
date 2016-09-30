@@ -1,5 +1,29 @@
+import java.util.ArrayList;
 
 public class MyBMIServer {
+
+
+
+
+	boolean init(){
+
+		// initialize RangeList ArrayList for editing
+		ArrayList<MyBMIRangeObject> RangeList = new ArrayList<>();
+
+	MyBMIRangeObject Underweight = new MyBMIRangeObject();
+	MyBMIRangeObject Normal = new MyBMIRangeObject();
+	MyBMIRangeObject Overweight = new MyBMIRangeObject();
+
+
+
+	Underweight.setParams("Underweight",0.0,18.50);
+	Normal.setParams("Normal",18.51,24.99);
+	Overweight.setParams("Overweight",25.00,99.99);
+	}
+
+
+
+	RangeList.add(Underweight);
 
 	String calcBMI(String weight, String height) {
 		// Returns a String representing the BMI (to 2 decimal places) and
@@ -11,13 +35,9 @@ public class MyBMIServer {
 		double dblHeight = Double.valueOf(height.trim());
 		double BMI = dblWeight / (dblHeight * dblHeight);
 
-		//get classification
+		// get classification
 
-
-
-
-
-		return BMI
+		return BMI;
 	}
 
 	// Provide the BMI ranges known to the calculator
@@ -25,6 +45,7 @@ public class MyBMIServer {
 		// Returns a String containing each of the currently known BMI ranges
 		// separated by “\n”.
 		// Return UNDEFINED if no ranges have been defined.
+
 	}
 
 	// Provide the ideal range of weights for a given height
