@@ -1,29 +1,4 @@
-import java.util.ArrayList;
-
 public class MyBMIServer {
-
-
-
-
-	boolean init(){
-
-		// initialize RangeList ArrayList for editing
-		ArrayList<MyBMIRangeObject> RangeList = new ArrayList<>();
-
-	MyBMIRangeObject Underweight = new MyBMIRangeObject();
-	MyBMIRangeObject Normal = new MyBMIRangeObject();
-	MyBMIRangeObject Overweight = new MyBMIRangeObject();
-
-
-
-	Underweight.setParams("Underweight",0.0,18.50);
-	Normal.setParams("Normal",18.51,24.99);
-	Overweight.setParams("Overweight",25.00,99.99);
-	}
-
-
-
-	RangeList.add(Underweight);
 
 	String calcBMI(String weight, String height) {
 		// Returns a String representing the BMI (to 2 decimal places) and
@@ -35,9 +10,24 @@ public class MyBMIServer {
 		double dblHeight = Double.valueOf(height.trim());
 		double BMI = dblWeight / (dblHeight * dblHeight);
 
-		// get classification
+		String result = String.format("%.2f", BMI) + " UNDEFINED";
 
-		return BMI;
+		// get Range Classification
+		for (int i = 0; i < DB.RangeList.size(); i++) {
+
+			double min = DB.get(i).getBMIMin().doubleValue();
+			double max = DB.get(i).getBMIMax().doubleValue();
+
+			if (BMI <= max && BMI >= min) {
+
+				// return BMI result + Range Classification
+				result = String.format("%.2f", BMI) + DB.get(i).getName();
+
+			}
+
+		}
+
+		return result;
 	}
 
 	// Provide the BMI ranges known to the calculator
@@ -46,6 +36,16 @@ public class MyBMIServer {
 		// separated by “\n”.
 		// Return UNDEFINED if no ranges have been defined.
 
+		String result = "Undefined";
+
+		for (int i = 0; i < DB.size(); i++) {
+
+			result = result + DB.get(i).getName() + " " + DB.get(i).getRange() + "\n";
+
+		}
+
+		return result;
+
 	}
 
 	// Provide the ideal range of weights for a given height
@@ -53,5 +53,8 @@ public class MyBMIServer {
 		// Returns a String providing the ideal lower and upper weights,
 		// separated by “ – “. Return
 		// UNDEFINED if no desirable range has been specified.
+
+		String result = "";
+
 	}
 }
