@@ -10,24 +10,26 @@ public class MyBMIServer {
 		double dblHeight = Double.valueOf(height.trim());
 		double BMI = dblWeight / (dblHeight * dblHeight);
 
-		String result = String.format("%.2f", BMI) + " UNDEFINED";
-
 		// get Range Classification
 		for (int i = 0; i < DB.RangeList.size(); i++) {
 
-			double min = DB.get(i).getBMIMin().doubleValue();
-			double max = DB.get(i).getBMIMax().doubleValue();
+			// pull in min and max range as doubles just in case
+			double min = DB.RangeList.get(i).getBMIMin().doubleValue();
+			double max = DB.RangeList.get(i).getBMIMax().doubleValue();
 
 			if (BMI <= max && BMI >= min) {
 
 				// return BMI result + Range Classification
-				result = String.format("%.2f", BMI) + DB.get(i).getName();
+				return String.format("%.2f", BMI) + DB.RangeList.get(i).getName().toUpperCase();
 
 			}
 
 		}
 
-		return result;
+		return String.format("%.2f", BMI) + " UNDEFINED";
+
+		// Done
+
 	}
 
 	// Provide the BMI ranges known to the calculator
@@ -36,15 +38,23 @@ public class MyBMIServer {
 		// separated by “\n”.
 		// Return UNDEFINED if no ranges have been defined.
 
-		String result = "Undefined";
+		String result = "";
 
-		for (int i = 0; i < DB.size(); i++) {
+		if (DB.RangeList.size() == 0) {
 
-			result = result + DB.get(i).getName() + " " + DB.get(i).getRange() + "\n";
+			return "UNDEFINED";
 
+		} else {
+
+			for (int i = 0; i < DB.RangeList.size(); i++) {
+
+				result = result + DB.RangeList.get(i).getName() + " " + DB.RangeList.get(i).getRange() + "\n";
+
+			}
+			return result;
 		}
 
-		return result;
+		// Done
 
 	}
 
@@ -54,7 +64,9 @@ public class MyBMIServer {
 		// separated by “ – “. Return
 		// UNDEFINED if no desirable range has been specified.
 
-		String result = "";
+		return "";
+
+		// list the minimum or maximum possible weight for a healthy bmi range
 
 	}
 }
