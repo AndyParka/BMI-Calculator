@@ -1,6 +1,11 @@
 public class MyBMIAdmin {
+	// By Andrew Parkinson
+	// c3128094
+	// University of Newcastle
+	// SENG3400 Semester 2 - 2016
+
 	// Add a new BMI range to the system
-	boolean addRange(String user, String pwd, String lower, String upper, String name, boolean normal) {
+	public boolean addRange(String user, String pwd, String lower, String upper, String name, boolean normal) {
 		// Returns false if a range with name already exists, if lower and/or
 		// upper overlap with an
 		// already-defined range, if normal is set and there is already another
@@ -94,7 +99,7 @@ public class MyBMIAdmin {
 
 	}
 
-	boolean deleteRange(String user, String pwd, String name) {
+	public boolean deleteRange(String user, String pwd, String name) {
 		// Returns false if a range with name does not exist or the user
 		// credentials are invalid, true
 		// if the range has been removed.
@@ -123,7 +128,7 @@ public class MyBMIAdmin {
 
 	// Update the name for a specific range (for example if medical opinions
 	// change)
-	boolean setName(String user, String pwd, String oldName, String newName) {
+	public boolean setName(String user, String pwd, String oldName, String newName) {
 		// Returns false if a range named oldName does not exist or the user
 		// credentials are invalid,
 		// true if the range exists and its name has been updated.
@@ -156,7 +161,7 @@ public class MyBMIAdmin {
 
 	// Retrieve the number of client web service calls performed on either
 	// interface since the server started
-	int callCount(String user, String pwd) {
+	public int callCount(String user, String pwd) {
 		// Returns -1 if the user credentials are invalid, otherwise returns the
 		// total number of calls
 		// (including this one) on either of the server interfaces.
@@ -170,7 +175,7 @@ public class MyBMIAdmin {
 
 	}
 
-	boolean testUser(String user, String pwd) {
+	public boolean testUser(String user, String pwd) {
 		return DB.User.TestUser(user, pwd);
 		// Done
 	}

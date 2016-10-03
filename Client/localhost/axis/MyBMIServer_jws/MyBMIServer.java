@@ -8,4 +8,7 @@
 package localhost.axis.MyBMIServer_jws;
 
 public interface MyBMIServer extends java.rmi.Remote {
+    public java.lang.String listRanges() throws java.rmi.RemoteException;
+    public java.lang.String calcBMI(java.lang.String weight, java.lang.String height) throws java.rmi.RemoteException;
+    public java.lang.String listWeights(java.lang.String height) throws java.rmi.RemoteException;
 }
