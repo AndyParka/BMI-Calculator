@@ -179,4 +179,8 @@ public class MyBMIAdmin {
 		return DB.User.TestUser(user, pwd);
 		// Done
 	}
+
+	public String testStringAdmin() {
+		return "Success";
+	}
 }

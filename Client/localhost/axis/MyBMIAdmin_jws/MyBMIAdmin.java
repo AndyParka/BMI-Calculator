@@ -11,5 +11,7 @@ public interface MyBMIAdmin extends java.rmi.Remote {
     public boolean setName(java.lang.String user, java.lang.String pwd, java.lang.String oldName, java.lang.String newName) throws java.rmi.RemoteException;
     public boolean addRange(java.lang.String user, java.lang.String pwd, java.lang.String lower, java.lang.String upper, java.lang.String name, boolean normal) throws java.rmi.RemoteException;
     public boolean deleteRange(java.lang.String user, java.lang.String pwd, java.lang.String name) throws java.rmi.RemoteException;
+    public int callCount(java.lang.String user, java.lang.String pwd) throws java.rmi.RemoteException;
     public boolean testUser(java.lang.String user, java.lang.String pwd) throws java.rmi.RemoteException;
+    public java.lang.String testStringAdmin() throws java.rmi.RemoteException;
 }

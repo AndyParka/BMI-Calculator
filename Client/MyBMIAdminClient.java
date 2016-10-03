@@ -13,16 +13,30 @@ public class MyBMIAdminClient
 		try{
 		MyBMIAdminService bmiAS = new MyBMIAdminServiceLocator();
 		MyBMIAdmin BMI = bmiAS.getMyBMIAdmin();
-		
-		String admin = "admin";
-		String pwd = "bodymass";
-		
-		String call = BMI.testUser(admin,pwd);
-		
-		 System.out.println(call);
 		} catch (Exception e){
 			e.printStackTrace();
 		}
+		
+		if("addRange" == args[0]){
+			
+			
+		}else if("deleteRange" == args[0]){
+			
+		}else if("setName" == args[0]){
+			
+		}else if("callCount" == args[0]){
+			
+		}else if("testUser" == args[0]){
+			
+		}else if("testStringAdmin" == args[0]){
+			
+			 System.out.println(BMI.testStringAdmin());
+			
+		}else {
+			
+		}
+		
+
 				
 	}
 

@@ -78,4 +78,8 @@ public class MyBMIServer {
 		return "UNDEFINED";
 
 	}
+
+	public String testStringServer() {
+		return "Success";
+	}
 }
