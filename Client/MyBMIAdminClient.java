@@ -32,7 +32,7 @@ public class MyBMIAdminClient
 			
 		}else if(args[0].equals("callCount")){
 			
-			System.out.println(BMI.callCount)args[1],args[2]));
+			System.out.println(BMI.callCount(args[1],args[2]));
 			
 		}else 
 		

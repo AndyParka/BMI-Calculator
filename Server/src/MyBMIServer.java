@@ -1,3 +1,5 @@
+import seng.DB;
+
 public class MyBMIServer {
 	// By Andrew Parkinson
 	// c3128094

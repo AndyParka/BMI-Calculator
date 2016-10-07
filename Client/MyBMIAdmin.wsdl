@@ -15,7 +15,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdl:part name="name" type="xsd:string"/>
 
-      <wsdl:part name="normal" type="xsd:boolean"/>
+      <wsdl:part name="strNormal" type="xsd:string"/>
 
    </wsdl:message>
 
@@ -107,11 +107,19 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="addRange" parameterOrder="user pwd lower upper name normal">
+      <wsdl:operation name="addRange" parameterOrder="user pwd lower upper name strNormal">
 
          <wsdl:input message="impl:addRangeRequest" name="addRangeRequest"/>
 
          <wsdl:output message="impl:addRangeResponse" name="addRangeResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="testStringAdmin">
+
+         <wsdl:input message="impl:testStringAdminRequest" name="testStringAdminRequest"/>
+
+         <wsdl:output message="impl:testStringAdminResponse" name="testStringAdminResponse"/>
 
       </wsdl:operation>
 
@@ -136,14 +144,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          <wsdl:input message="impl:testUserRequest" name="testUserRequest"/>
 
          <wsdl:output message="impl:testUserResponse" name="testUserResponse"/>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="testStringAdmin">
-
-         <wsdl:input message="impl:testStringAdminRequest" name="testStringAdminRequest"/>
-
-         <wsdl:output message="impl:testStringAdminResponse" name="testStringAdminResponse"/>
 
       </wsdl:operation>
 
@@ -182,6 +182,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="addRangeResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/axis/MyBMIAdmin.jws" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="testStringAdmin">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="testStringAdminRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://DefaultNamespace" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="testStringAdminResponse">
 
             <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/axis/MyBMIAdmin.jws" use="encoded"/>
 
@@ -236,24 +254,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="testUserResponse">
-
-            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/axis/MyBMIAdmin.jws" use="encoded"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="testStringAdmin">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="testStringAdminRequest">
-
-            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://DefaultNamespace" use="encoded"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="testStringAdminResponse">
 
             <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8080/axis/MyBMIAdmin.jws" use="encoded"/>
 

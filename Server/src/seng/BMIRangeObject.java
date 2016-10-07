@@ -1,3 +1,4 @@
+package seng;
 
 public class BMIRangeObject {
 

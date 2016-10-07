@@ -1,3 +1,6 @@
+import seng.BMIRangeObject;
+import seng.DB;
+
 public class MyBMIAdmin {
 	// By Andrew Parkinson
 	// c3128094
@@ -5,7 +8,7 @@ public class MyBMIAdmin {
 	// SENG3400 Semester 2 - 2016
 
 	// Add a new BMI range to the system
-	public boolean addRange(String user, String pwd, String lower, String upper, String name, boolean normal) {
+	public boolean addRange(String user, String pwd, String lower, String upper, String name, String strNormal) {
 		// Returns false if a range with name already exists, if lower and/or
 		// upper overlap with an
 		// already-defined range, if normal is set and there is already another
@@ -24,6 +27,8 @@ public class MyBMIAdmin {
 		// defined double version of Upper and Lower ranges
 		double dblUpper = 0;
 		double dblLower = 0;
+
+		boolean normal = Boolean.parseBoolean(strNormal);
 
 		// Check user credentials
 		if (DB.User.TestUser(user, pwd)) {
