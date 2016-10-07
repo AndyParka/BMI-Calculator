@@ -1,5 +1,7 @@
 import localhost.axis.MyBMIServer_jws.*;
 
+import org.apache.axis.client.*;
+
 public class MyBMIServerClient
 {
 	
@@ -17,6 +19,29 @@ public class MyBMIServerClient
 		System.out.println(BMI.listWeights("50"));
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		
+		if (args[0].equals("calcBMI")){
+			
+			System.out.println(BMI.balcBMI(args[1], args[2]));
+			
+		} else if (args[0].equals("listRanges")) {
+			
+			System.out.println(BMI.listRanges());
+			
+		} else if (args[0].equals("listWeights")) {
+			
+			System.out.println(BMI.listWeights(args[1]));
+			
+		} else if (args[0].equals("testStringServer")) {
+			
+			System.out.println(BMI.testStringServer());
+			
+		} else {
+			System.out.println("Argument Error");
+			System.out.println(args[0] + " is not " + test);
+			System.out.println(args[1]);
+			System.out.println(args[2]);
 		}
 				
 	}
